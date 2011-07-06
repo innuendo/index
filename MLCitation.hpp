@@ -1,5 +1,5 @@
 #include <stdint.h>
-
+#include "rawxml.hpp"
 struct MLCitation {
 	uint64_t pmid;
 	char	*title;

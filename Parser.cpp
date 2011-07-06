@@ -68,12 +68,14 @@ char* Parser::getTitle(rapidxml::xml_node<> *node) {
 }
 
 vector<MLCitation>::iterator Parser::parse() {
-	MLCitation tmp;
-	rapidxml::xml_document<> doc;
+    rapidxml::xml_document<> doc;
 	doc.parse<0>(read_data);
 	rapidxml::xml_node<> *node = doc.first_node();
     node = node->first_node();
 	while (node != NULL) {
+        std::string s;
+        rapidxml::print(std::back_inserter(s), *node);
+        MLCitation tmp(s);
         if (node->first_node("Article")) {
             tmp.pmid	 = boost::lexical_cast<uint64_t>(
                         node->first_node("PMID")->value());
@@ -82,11 +84,11 @@ vector<MLCitation>::iterator Parser::parse() {
             tmp.journal	 = getJournal(node);
             tmp.date 	 = getPubDate(node);
         } else {
-            tmp.pmid = NULL;
-            tmp.title = NULL;
+            tmp.pmid     = NULL;
+            tmp.title    = NULL;
             tmp.abstract = NULL;
-            tmp.journal = NULL;
-            tmp.date = NULL;
+            tmp.journal  = NULL;
+            tmp.date     = NULL;
         }
         // tmp.attr_string = create_string_args();
 		node		 = node->next_sibling();
