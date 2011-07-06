@@ -6,6 +6,9 @@ class zstring {
 	std::string z;
 public:
 	zstring(std::string s): z(s) {};
+	string operator(string) () {
+		return z;
+	}
 }
 
 
