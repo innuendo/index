@@ -6,6 +6,7 @@ struct MLCitation {
 	char	 *abstract;
 	char	 *journal;
 	char	 *date;
-    std::string xml;   
+    RawXML   xml;
+    MLCitation(std::string xml) : xml(xml) {};
 	//TODO: Meshe
 };
