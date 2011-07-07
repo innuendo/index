@@ -3,7 +3,7 @@
 #include <string>
 #include "rawxml.hpp"
 
-typedef uint64_t pmid_t
+typedef uint64_t pmid_t;
 
 struct MLCitation {
 	pmid_t				pmid;
