@@ -5,6 +5,8 @@ using namespace boost;
 void TagIndex::insert(MLCitation& cit) {
 	journal.insert(make_pair(cit.journal, cit.pmid));
 	date.insert(make_pair(cit.date, cit.pmid));
+	for (vector<string>::iterator i = cit.meshtags.begin(); i != cit.meshtags.end(); ++i)
+		mesh.insert(make_pair(*i, cit.pmid));
 }
 
 static inline vector<pmid_t> do_query(mimap &m, string s) {
@@ -21,4 +23,8 @@ vector<pmid_t> TagIndex::query_journal(string s) {
 
 vector<pmid_t> TagIndex::query_date(string s) {
 	return do_query(date, s);
+}
+
+vector<pmid_t> TagIndex::query_mesh(string s) {
+	return do_query(mesh, s);
 }
