@@ -1,7 +1,6 @@
 #include <stdint.h>
 #include <vector>
 #include <string>
-#include "rawxml.hpp"
 
 typedef uint64_t pmid_t;
 
