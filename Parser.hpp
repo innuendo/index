@@ -2,6 +2,8 @@
 #define __PARSER_HPP
 
 #include <vector>
+#include <lzo/lzo1x.h>
+#include "lzo/lzoconf.h"
 #include <cstdlib>
 #include <cstring>
 #include <boost/lexical_cast.hpp>
@@ -15,11 +17,8 @@
 class Parser {
 	char* read_data;
 	std::vector<MLCitation> mlcs;
-    char* getTitle(rapidxml::xml_node<> *node);
-    char* getAbstract(rapidxml::xml_node<> *node);
-    char* getJournal(rapidxml::xml_node<> *node);
-    char* getPubDate(rapidxml::xml_node<> *node);
-    char* setXML(rapidxml::xml_node<> *node);
+    void getJournal(rapidxml::xml_node<> const* node, std::string& s);
+    void getPubDate(rapidxml::xml_node<> const* node, std::string& s);
     
 public:
 	typedef std::vector<MLCitation>::iterator MLCitationIter;
