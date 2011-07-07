@@ -3,7 +3,7 @@
 #include <boost/unordered_map.hpp>
 #include "MLCitation.hpp"
 
-typedef unordered_multimap<std::string, pmid_t> mimap;
+typedef boost::unordered_multimap<std::string, pmid_t> mimap;
 
 class TagIndex {
 	mimap	journal;
