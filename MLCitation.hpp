@@ -1,12 +1,13 @@
 #include <stdint.h>
+#include <vector>
+#include <string>
 #include "rawxml.hpp"
+
+typedef uint64_t pmid_t
+
 struct MLCitation {
-	uint64_t pmid;
-	char	*title;
-	char	*abstract;
-	char	*journal;
-	char	*date;
-	RawXML	xml;
-	MLCitation(std::string xml) : xml(xml) {};
-	//TODO: Meshe
+	pmid_t				pmid;
+	char				*journal;
+	char				*date;
+	std::vector<std::string>	meshtags;
 };
