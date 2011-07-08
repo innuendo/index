@@ -18,7 +18,20 @@ XMLStore::XMLStore(char const* fileName) {
 	read_data = (char*)malloc(len);
 	fread(read_data, len, 1, fp);
 	fclose(fp);
-	parse();
+	rapidxml::xml_document<> doc;
+	doc.parse<0>(read_data);
+	rapidxml::xml_node<> *node = doc.first_node();	// <MedlineCitationSet>
+	node = node->first_node();			// <MedlineCitation>
+	while (node != NULL) {
+		if (node->first_node("PMID")) {
+			pmid_t pmid = boost::lexical_cast<uint64_t>(
+					node->first_node("PMID")->value());
+			string xml;
+			print(std::back_inserter(xml), *node, 0);
+			xmls[pmid] = xml;
+		}
+		node = node->next_sibling();
+	}
 }
 
 XMLStore::~XMLStore() {
@@ -52,19 +65,3 @@ const char* XMLStore::get_xml(pmid_t id) {
 		return NULL;
 }
 
-void XMLStore::parse() {
-	rapidxml::xml_document<> doc;
-	doc.parse<0>(read_data);
-	rapidxml::xml_node<> *node = doc.first_node();	// <MedlineCitationSet>
-	node = node->first_node();			// <MedlineCitation>
-	while (node != NULL) {
-		if (node->first_node("PMID")) {
-			pmid_t pmid = boost::lexical_cast<uint64_t>(
-					node->first_node("PMID")->value());
-			string xml;
-			print(std::back_inserter(xml), *node, 0);
-			xmls[pmid] = xml;
-		}
-		node = node->next_sibling();
-	}
-}

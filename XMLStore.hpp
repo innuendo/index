@@ -18,9 +18,7 @@
 
 class XMLStore {
 	char* read_data;
-//	std::vector<MLCitation> mlcs;
 	boost::unordered_map<pmid_t, std::string> xmls;
-	void parse();	
 public:
 	//typedef std::vector<MLCitation>::iterator MLCitationIter;
 	XMLStore(char const* fileName);
