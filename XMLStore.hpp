@@ -13,22 +13,19 @@
 #include "rapidxml.hpp"
 #include "rapidxml_utils.hpp"
 #include "rapidxml_print.hpp"
-//#include "rapidxml_iterators.hpp"
 #include "MLCitation.hpp"
 
 class XMLStore {
 	char* read_data;
-//	std::vector<MLCitation> mlcs;
 	boost::unordered_map<pmid_t, std::string> xmls;
-	void parse();	
 public:
-	//typedef std::vector<MLCitation>::iterator MLCitationIter;
 	XMLStore(char const* fileName);
 	~XMLStore();
 
-	const char* get_xml(pmid_t);
-	const char* get_title(pmid_t);
-	const char* get_abstract(pmid_t);
+	char* get_xml(pmid_t);
+	char* get_title(pmid_t);
+	char* get_abstract(pmid_t);
+	// returned buffers are owned by caller and have to be delete()d
 
 	class iterator {
 		boost::unordered_map<pmid_t, std::string>::const_iterator i;
