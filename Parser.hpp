@@ -15,16 +15,14 @@
 #include "MLCitation.hpp"
 
 class Parser {
-	char* read_data;
-	std::vector<MLCitation> mlcs;
-    void getJournal(rapidxml::xml_node<> const* node, std::string& s);
-    void getPubDate(rapidxml::xml_node<> const* node, std::string& s);
+    char* mlc_xml;
     
+    void getMeshData(rapidxml::xml_node<> const* node,
+                     std::vector<char*>& meshes);
+    std::string getTagValue(char const** path,
+                            rapidxml::xml_node<> const* root);
 public:
-	typedef std::vector<MLCitation>::iterator MLCitationIter;
-	Parser(char const* fileName);
-	~Parser();
-	std::vector<MLCitation>::iterator parse();	
+    MLCitation parse(char* mlc_xml);
 };
 
 #endif
