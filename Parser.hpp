@@ -2,10 +2,8 @@
 #define __PARSER_HPP
 
 #include <vector>
-#include <lzo/lzo1x.h>
-#include "lzo/lzoconf.h"
 #include <cstdlib>
-#include <cstring>
+//#include <cstring>
 #include <boost/lexical_cast.hpp>
 
 #include "rapidxml.hpp"
@@ -15,8 +13,9 @@
 
 class Parser {
     char* mlc_xml;
-    void getMeshData(rapidxml::xml_node<> const* node,
+    void get_mesh_data(rapidxml::xml_node<> const* node,
                      std::vector<char*>& meshes);
+    rapidxml::xml_document<> doc;
 public:
     Parser(char* mlc_xml) : mlc_xml(mlc_xml) {}
     MLCitation parse();

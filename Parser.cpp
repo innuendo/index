@@ -4,7 +4,7 @@
 
 #define MLCS_PER_FILE 30000
 
-void Parser::getMeshData(rapidxml::xml_node<> const* node,
+void Parser::get_mesh_data(rapidxml::xml_node<> const* node,
                          std::vector<char*>& meshes) {
 //    static int x = 0;
 //    cout << ++x <<endl;
@@ -58,7 +58,6 @@ std::string Parser::get_tag_value(char const** path,
 }
 
 MLCitation Parser::parse() {
-    rapidxml::xml_document<> doc;
 	doc.parse<0>(mlc_xml);
     MLCitation result;
     char const* year_q[] = {"Article", "Journal", "PubDate", "Year"};
@@ -69,6 +68,6 @@ MLCitation Parser::parse() {
     result.date = get_tag_value(year_q, &doc);
     result.date += get_tag_value(month_q, &doc);
     result.journal = get_tag_value(journal_q, &doc);
-    getMeshData(&doc, result.meshtags);
+    get_mesh_data(&doc, result.meshtags);
     return result;
 }
