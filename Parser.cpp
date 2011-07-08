@@ -4,38 +4,39 @@
 #define MLCS_PER_FILE 30000
 
 void Parser::get_mesh_data(std::vector<char*>& meshes) {
-//    static int x = 0;
-//    cout << ++x <<endl;
-    rapidxml::xml_node<> *node = &doc;
-    if (node->first_node("MeshHeadingList")) {
-        if (node->first_node("MeshHeadingList")->first_node("MeshHeading")) {
-            bool descriptorIn = false;
-            rapidxml::xml_node<> *MeshNode =
-                node->first_node(
-                    "MeshHeadingList")->first_node("MeshHeading");
-            while (MeshNode) {
-                rapidxml::xml_node<> *MeshProp = MeshNode->first_node("DescriptorName");
-                if (MeshProp->first_attribute("MajorTopicYN")) {
-                    if (strcmp(MeshProp->first_attribute("MajorTopicYN")->value(), "Y")) {
-                        meshes.push_back(MeshProp->value());
-                        descriptorIn = true;
-                    }
-                }
-                for (; MeshProp; MeshProp = MeshProp->next_sibling()) {
-                    if (MeshNode->first_attribute("MajorTopicYN")) {
-                        if (strcmp(MeshNode->first_attribute("MajorTopicYN")->value() , "Y")){
-                            meshes.push_back(MeshProp->value());
-                            if (!descriptorIn) {
-                                descriptorIn = true;
-                                meshes.push_back(
-                                    MeshNode->first_node("DescriptorName")->value());
-                            }
-                        }
-                    }
-                }
-                MeshNode = MeshNode->next_sibling();
+    char const* mesh_q[] = 
+        {"MedlineCitation", "MeshHeadingList", "MeshHeading", NULL};
+    rapidxml::xml_node<> const* MeshNode = get_tag_node(mesh_q);
+#ifdef DEBUG
+    if (!MeshNode) {
+        std::cout << std::endl << "\t[MESH: No such node!]" << std::endl;
+    }
+    std::cout <<  std::endl << "\t[DEBUG defined]" <<std::endl;
+#endif
+    bool descriptorIn = false;
+    while (MeshNode) {
+        rapidxml::xml_node<> *MeshProp = MeshNode->first_node("DescriptorName");
+        if (MeshProp->first_attribute("MajorTopicYN")) {
+            if (strcmp(MeshProp->first_attribute("MajorTopicYN")->value(),
+                       "Y")) {
+                meshes.push_back(MeshProp->value());
+                descriptorIn = true;
             }
         }
+        for (; MeshProp; MeshProp = MeshProp->next_sibling()) {
+            if (MeshNode->first_attribute("MajorTopicYN")) {
+                if (strcmp(MeshNode->first_attribute("MajorTopicYN")->value() ,
+                           "Y")) {
+                    meshes.push_back(MeshProp->value());
+                    if (!descriptorIn) {
+                        descriptorIn = true;
+                        meshes.push_back(
+                            MeshNode->first_node("DescriptorName")->value());
+                    }
+                }
+            }
+        }
+        MeshNode = MeshNode->next_sibling();
     }
 }
 
@@ -43,11 +44,8 @@ rapidxml::xml_node<> const* Parser::get_tag_node(char const** path) {
     rapidxml::xml_node<> const* node = &doc;
     char const** it = path;
     while (*it) {
-        if (node->first_node(*it)) {
-            node = node->first_node(*it);
-        } else {
-            break;
-        }
+        node = node->first_node(*it);
+        if (!node) break;
         ++it;
     }
     return node;
