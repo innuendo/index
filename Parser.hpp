@@ -19,8 +19,7 @@ class Parser {
 public:
     Parser(char* mlc_xml) : mlc_xml(mlc_xml) {}
     MLCitation parse();
-    std::string get_tag_value(char const** path,
-                            rapidxml::xml_node<> const* root);
+    std::string get_tag_value(char const** path);
     
 };
 
