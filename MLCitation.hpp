@@ -1,3 +1,6 @@
+#ifndef __MLCITATION_H
+#define __MLCITATION_H
+
 #include <stdint.h>
 #include <vector>
 #include <string>
@@ -10,3 +13,5 @@ struct MLCitation {
 	std::string			date;
 	std::vector<char*>	meshtags;
 };
+
+#endif
