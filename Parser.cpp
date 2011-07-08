@@ -70,6 +70,6 @@ MLCitation Parser::parse() {
     result.date = get_tag_value(year_q);
     result.date += get_tag_value(month_q);
     result.journal = get_tag_value(journal_q);
-    //get_mesh_data(result.meshtags);
+    get_mesh_data(result.meshtags);
     return result;
 }
