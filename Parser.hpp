@@ -15,7 +15,8 @@
 class Parser {
     char* mlc_xml;
     rapidxml::xml_document<> doc;
-
+    
+    rapidxml::xml_node<> const* get_tag_node(char const** path);
     void get_mesh_data(std::vector<char*>& meshes);
     
 public:

@@ -39,9 +39,8 @@ void Parser::get_mesh_data(std::vector<char*>& meshes) {
     }
 }
 
-std::string Parser::get_tag_value(char const** path) {
+rapidxml::xml_node<> const* Parser::get_tag_node(char const** path) {
     rapidxml::xml_node<> const* node = &doc;
-    std::string result = "";
     char const** it = path;
     while (*it) {
         if (node->first_node(*it)) {
@@ -51,7 +50,15 @@ std::string Parser::get_tag_value(char const** path) {
         }
         ++it;
     }
-    result = node->value();
+    return node;
+}
+
+std::string Parser::get_tag_value(char const** path) {
+    std::string result = "";
+    rapidxml::xml_node<> const* node = get_tag_node(path);
+    if (node) {
+        result = node->value();
+    }
     return result;
 }
 
