@@ -57,11 +57,15 @@ char* XMLStore::getTitle(rapidxml::xml_node<> *node) {
     }
 }
 */
-const char* XMLStore::get_xml(pmid_t id) {
+char* XMLStore::get_xml(pmid_t id) {
 	unordered_map<pmid_t, string>::const_iterator i = xmls.find(id);
-	if (i != xmls.end())
-		return i->second.c_str();
-	else
+	if (i != xmls.end()) {
+		const char *xml = i->second.c_str();
+		char *buf = new char[strlen(xml)+1];
+		strcpy(buf, xml);
+		return buf;
+	} else {
 		return NULL;
+	}
 }
 
