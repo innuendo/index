@@ -15,8 +15,9 @@ XMLStore::XMLStore(char const* fileName) {
 	fseek(fp, 0, SEEK_END);
 	len = ftell(fp);
 	fseek(fp, 0, SEEK_SET); 
-	read_data = (char*)malloc(len);
+	read_data = (char*)malloc(len+1);
 	fread(read_data, len, 1, fp);
+	read_data[len] = '\0';
 	fclose(fp);
 	rapidxml::xml_document<> doc;
 	doc.parse<0>(read_data);
