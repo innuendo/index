@@ -1,19 +1,24 @@
-#include <utility>
+#ifndef _TAGINDEX_H_
+#define _TAGINDEX_H_
+
 #include <vector>
 #include <boost/unordered_map.hpp>
 #include "MLCitation.hpp"
 
-typedef boost::unordered_multimap<std::string, pmid_t> mimap;
+typedef std::vector<pmid_t> mlcvect;
+typedef boost::unordered_map<std::string, mlcvect> mlcmap;
 
 class TagIndex {
-	mimap	journal;
-	mimap	date;
-	mimap	mesh;
+	mlcmap	journal;
+	mlcmap	date;
+	mlcmap	mesh;
 public:
-	std::vector<pmid_t> query_journal(std::string);
-	std::vector<pmid_t> query_date(std::string);
-	std::vector<pmid_t> query_mesh(std::string);
+	void insert(const MLCitation&);
+	void sort();
 
-	void insert(MLCitation&);
+	const mlcvect& query_journal(const std::string) const;
+	const mlcvect& query_date(const std::string) const ;
+	const mlcvect& query_mesh(const std::string) const ;
 };
 
+#endif

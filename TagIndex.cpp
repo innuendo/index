@@ -1,30 +1,41 @@
+#include <algorithm>
 #include "TagIndex.hpp"
 using namespace std;
 using namespace boost;
 
-void TagIndex::insert(MLCitation& cit) {
-	journal.insert(make_pair(cit.journal, cit.pmid));
-	date.insert(make_pair(cit.date, cit.pmid));
-	for (vector<string>::iterator i = cit.meshtags.begin(); i != cit.meshtags.end(); ++i)
-		mesh.insert(make_pair(*i, cit.pmid));
+void TagIndex::insert(const MLCitation& cit) {
+	journal[cit.journal].push_back(cit.pmid);
+	date[cit.date].push_back(cit.pmid);
+	for (vector<string>::const_iterator i = cit.meshtags.begin(); i != cit.meshtags.end(); ++i)
+		mesh[*i].push_back(cit.pmid);
 }
 
-static inline vector<pmid_t> do_query(mimap &m, string s) {
-	vector<pmid_t> ret;
-	pair<mimap::iterator, mimap::iterator> range = m.equal_range(s);
-	for (mimap::iterator i = range.first; i != range.second; ++i)
-		ret.push_back(i->second);
-	return ret;
+void TagIndex::sort() {
+	for (mlcmap::iterator i = journal.begin(); i != journal.end(); ++i)
+		std::sort(i->second.begin(), i->second.end());
+	for (mlcmap::iterator i = date.begin(); i != date.end(); ++i)
+		std::sort(i->second.begin(), i->second.end());
+	for (mlcmap::iterator i = mesh.begin(); i != mesh.end(); ++i)
+		std::sort(i->second.begin(), i->second.end());
 }
 
-vector<pmid_t> TagIndex::query_journal(string s) {
+static inline const mlcvect& do_query(const mlcmap& m, const string s) {
+	static const mlcvect empty;
+	mlcmap::const_iterator i = m.find(s);
+	if (i != m.end())
+		return i->second;
+	else
+		return empty;
+}
+
+const mlcvect& TagIndex::query_journal(const string s) const {
 	return do_query(journal, s);
 }
 
-vector<pmid_t> TagIndex::query_date(string s) {
+const mlcvect& TagIndex::query_date(const string s) const {
 	return do_query(date, s);
 }
 
-vector<pmid_t> TagIndex::query_mesh(string s) {
+const mlcvect& TagIndex::query_mesh(const string s) const {
 	return do_query(mesh, s);
 }
