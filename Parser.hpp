@@ -13,8 +13,7 @@
 
 class Parser {
     char* mlc_xml;
-    void get_mesh_data(rapidxml::xml_node<> const* node,
-                     std::vector<char*>& meshes);
+    void get_mesh_data(std::vector<char*>& meshes);
     rapidxml::xml_document<> doc;
 public:
     Parser(char* mlc_xml) : mlc_xml(mlc_xml) {}

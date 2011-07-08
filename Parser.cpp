@@ -4,10 +4,10 @@
 
 #define MLCS_PER_FILE 30000
 
-void Parser::get_mesh_data(rapidxml::xml_node<> const* node,
-                         std::vector<char*>& meshes) {
+void Parser::get_mesh_data(std::vector<char*>& meshes) {
 //    static int x = 0;
 //    cout << ++x <<endl;
+    rapidxml::xml_node<> *node = &doc;
     if (node->first_node("MeshHeadingList")) {
         if (node->first_node("MeshHeadingList")->first_node("MeshHeading")) {
             bool descriptorIn = false;
