@@ -6,7 +6,7 @@ using namespace boost;
 void TagIndex::insert(const MLCitation& cit) {
 	journal[cit.journal].push_back(cit.pmid);
 	date[cit.date].push_back(cit.pmid);
-	for (vector<string>::const_iterator i = cit.meshtags.begin(); i != cit.meshtags.end(); ++i)
+	for (vector<char*>::const_iterator i = cit.meshtags.begin(); i != cit.meshtags.end(); ++i)
 		mesh[*i].push_back(cit.pmid);
 }
 
