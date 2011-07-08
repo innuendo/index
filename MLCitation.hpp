@@ -8,5 +8,5 @@ struct MLCitation {
 	pmid_t				pmid;
 	std::string			journal;
 	std::string			date;
-	std::vector<std::string>	meshtags;
+	std::vector<char*>	meshtags;
 };
