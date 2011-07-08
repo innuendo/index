@@ -1,3 +1,6 @@
+#ifndef _TAGINDEX_H_
+#define _TAGINDEX_H_
+
 #include <vector>
 #include <boost/unordered_map.hpp>
 #include "MLCitation.hpp"
@@ -18,3 +21,4 @@ public:
 	const mlcvect& query_mesh(const std::string) const ;
 };
 
+#endif
