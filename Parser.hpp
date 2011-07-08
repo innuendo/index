@@ -11,18 +11,18 @@
 #include "rapidxml.hpp"
 #include "rapidxml_utils.hpp"
 #include "rapidxml_print.hpp"
-//#include "rapidxml_iterators.hpp"
 #include "MLCitation.hpp"
 
 class Parser {
     char* mlc_xml;
-    
     void getMeshData(rapidxml::xml_node<> const* node,
                      std::vector<char*>& meshes);
-    std::string getTagValue(char const** path,
-                            rapidxml::xml_node<> const* root);
 public:
-    MLCitation parse(char* mlc_xml);
+    Parser(char* mlc_xml) : mlc_xml(mlc_xml) {}
+    MLCitation parse();
+    std::string get_tag_value(char const** path,
+                            rapidxml::xml_node<> const* root);
+    
 };
 
 #endif

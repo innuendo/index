@@ -40,7 +40,7 @@ void Parser::getMeshData(rapidxml::xml_node<> const* node,
     }
 }
 
-std::string Parser::getTagValue(char const** path,
+std::string Parser::get_tag_value(char const** path,
                               rapidxml::xml_node<> const* root) {
     rapidxml::xml_node<> const* node = root;
     std::string result = "";
@@ -57,7 +57,7 @@ std::string Parser::getTagValue(char const** path,
     return result;
 }
 
-MLCitation Parser::parse(char* mlc_xml) {
+MLCitation Parser::parse() {
     rapidxml::xml_document<> doc;
 	doc.parse<0>(mlc_xml);
     MLCitation result;
@@ -66,9 +66,9 @@ MLCitation Parser::parse(char* mlc_xml) {
     char const* journal_q[] = {"Article", "Journal", "Title"};
     
     result.pmid = boost::lexical_cast<pmid_t>(doc.first_node("PMID")->value());
-    result.date = getTagValue(year_q, &doc);
-    result.date += getTagValue(month_q, &doc);
-    result.journal = getTagValue(journal_q, &doc);
+    result.date = get_tag_value(year_q, &doc);
+    result.date += get_tag_value(month_q, &doc);
+    result.journal = get_tag_value(journal_q, &doc);
     getMeshData(&doc, result.meshtags);
     return result;
 }
