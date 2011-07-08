@@ -6,6 +6,7 @@
 #include <cstring>
 #include <boost/lexical_cast.hpp>
 
+#include <iostream>
 #include "rapidxml.hpp"
 #include "rapidxml_utils.hpp"
 #include "rapidxml_print.hpp"
@@ -13,8 +14,10 @@
 
 class Parser {
     char* mlc_xml;
-    void get_mesh_data(std::vector<char*>& meshes);
     rapidxml::xml_document<> doc;
+
+    void get_mesh_data(std::vector<char*>& meshes);
+    
 public:
     Parser(char* mlc_xml) : mlc_xml(mlc_xml) {}
     MLCitation parse();
