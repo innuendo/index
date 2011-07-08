@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <cstdlib>
-//#include <cstring>
+#include <cstring>
 #include <boost/lexical_cast.hpp>
 
 #include "rapidxml.hpp"
