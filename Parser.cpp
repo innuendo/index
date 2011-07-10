@@ -13,19 +13,20 @@ void Parser::get_mesh_data(std::vector<char*>& meshes) {
     }
     std::cout <<  std::endl << "\t[DEBUG defined]" <<std::endl;
 #endif
-    bool descriptorIn = false;
     while (MeshNode) {
+        bool descriptorIn = false;
         rapidxml::xml_node<> *MeshProp = MeshNode->first_node("DescriptorName");
         if (MeshProp->first_attribute("MajorTopicYN")) {
-            if (strcmp(MeshProp->first_attribute("MajorTopicYN")->value(),
+            if (!strcmp(MeshProp->first_attribute("MajorTopicYN")->value(),
                        "Y")) {
                 meshes.push_back(MeshProp->value());
                 descriptorIn = true;
             }
         }
+        MeshProp = MeshProp->next_sibling();	// leave DescriptorName node
         for (; MeshProp; MeshProp = MeshProp->next_sibling()) {
-            if (MeshNode->first_attribute("MajorTopicYN")) {
-                if (strcmp(MeshNode->first_attribute("MajorTopicYN")->value() ,
+            if (MeshProp->first_attribute("MajorTopicYN")) {
+                if (!strcmp(MeshProp->first_attribute("MajorTopicYN")->value() ,
                            "Y")) {
                     meshes.push_back(MeshProp->value());
                     if (!descriptorIn) {
