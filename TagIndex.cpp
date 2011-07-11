@@ -10,7 +10,7 @@ void TagIndex::insert(const MLCitation& cit) {
 		mesh[*i].push_back(cit.pmid);
 }
 
-void TagIndex::sort() {
+void TagIndex::postprocess() {
 	for (mlcmap::iterator i = journal.begin(); i != journal.end(); ++i)
 		std::sort(i->second.begin(), i->second.end());
 	for (mlcmap::iterator i = date.begin(); i != date.end(); ++i)

@@ -37,8 +37,8 @@ int main(int argc, char *argv[]) {
 		}
 		cerr << "done." << endl;
 	}
-	cerr << "Data loaded, sorting... ";
-	index.sort();
+	cerr << "Data loaded, postprocessing... ";
+	index.postprocess();
 	cerr << "done." << endl;
 
 	while (!cin.eof()) {
