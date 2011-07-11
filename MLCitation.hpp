@@ -4,6 +4,7 @@
 #include <stdint.h>
 #include <set>
 #include <string>
+#include <cstring>
 
 typedef uint64_t pmid_t;
 
