@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MedlineCitationSet PUBLIC "-//NLM//DTD Medline Citation, 1st January, 2011//EN"
+                                    "http://www.nlm.nih.gov/databases/dtd/nlmmedlinecitationset_110101.dtd">
+<MedlineCitationSet>
+
+<MedlineCitation>
+<PMID>1</PMID>
+<Journal>
+<JournalIssue>
+<PubDate>
+<Year>1903</Year>
+<Month>Jul</Month>
+</PubDate>
+</JournalIssue>
+<Title>t1</Title>
+</Journal>
+<MeshHeadingList>
+<MeshHeading>
+<DescriptorName MajorTopicYN="N">d</DescriptorName>
+</MeshHeading>
+</MeshHeadingList>
+</MedlineCitation>
+
+<MedlineCitation>
+<PMID>2</PMID>
+<Journal>
+<JournalIssue>
+<PubDate>
+<Year>1903</Year>
+<Month>Jul</Month>
+</PubDate>
+</JournalIssue>
+<Title>t1</Title>
+</Journal>
+<MeshHeadingList>
+<MeshHeading>
+<DescriptorName MajorTopicYN="Y">d</DescriptorName>
+</MeshHeading>
+</MeshHeadingList>
+</MedlineCitation>
+
+<MedlineCitation>
+<PMID>3</PMID>
+<Journal>
+<JournalIssue>
+<PubDate>
+<Year>1903</Year>
+<Month>Jul</Month>
+</PubDate>
+</JournalIssue>
+<Title>t1</Title>
+</Journal>
+<MeshHeadingList>
+<MeshHeading>
+<DescriptorName MajorTopicYN="N">d</DescriptorName>
+<QualifierName MajorTopicYN="N">q</QualifierName>
+</MeshHeading>
+</MeshHeadingList>
+</MedlineCitation>
+
+<MedlineCitation>
+<PMID>4</PMID>
+<Journal>
+<JournalIssue>
+<PubDate>
+<Year>1903</Year>
+<Month>Jul</Month>
+</PubDate>
+</JournalIssue>
+<Title>t1</Title>
+</Journal>
+<MeshHeadingList>
+<MeshHeading>
+<DescriptorName MajorTopicYN="N">d</DescriptorName>
+<QualifierName MajorTopicYN="Y">q</QualifierName>
+</MeshHeading>
+</MeshHeadingList>
+</MedlineCitation>
+
+</MedlineCitationSet>
