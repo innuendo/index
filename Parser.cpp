@@ -2,7 +2,7 @@
 
 #define MLCS_PER_FILE 30000
 
-void Parser::get_mesh_data(std::vector<char*>& meshes) {
+void Parser::get_mesh_data(mesh_set_t& meshes) {
     char const* mesh_q[] = 
     {"MedlineCitation", "MeshHeadingList", "MeshHeading", NULL};
     rapidxml::xml_node<> const* MeshNode = get_tag_node(mesh_q);
@@ -13,13 +13,11 @@ void Parser::get_mesh_data(std::vector<char*>& meshes) {
     std::cout <<  std::endl << "\t[DEBUG defined]" <<std::endl;
 #endif
     while (MeshNode) {
-        bool descriptorIn = false;
         rapidxml::xml_node<> *MeshProp = MeshNode->first_node("DescriptorName");
         if (MeshProp->first_attribute("MajorTopicYN")) {
             if (!strcmp(MeshProp->first_attribute("MajorTopicYN")->value(),
                         "Y")) {
-                meshes.push_back(MeshProp->value());
-                descriptorIn = true;
+                meshes.insert(MeshProp->value());
             }
         }
         MeshProp = MeshProp->next_sibling();
@@ -27,12 +25,9 @@ void Parser::get_mesh_data(std::vector<char*>& meshes) {
             if (MeshProp->first_attribute("MajorTopicYN")) {
                 if (!strcmp(MeshProp->first_attribute("MajorTopicYN")->value() ,
                             "Y")) {
-                    meshes.push_back(MeshProp->value());
-                    if (!descriptorIn) {
-                        descriptorIn = true;
-                        meshes.push_back(
-                                         MeshNode->first_node("DescriptorName")->value());
-                    }
+                    meshes.insert(MeshProp->value());
+                    meshes.insert(
+                        MeshNode->first_node("DescriptorName")->value());
                 }
             }
         }
