@@ -17,13 +17,12 @@ class Parser {
     rapidxml::xml_document<> doc;
     
     rapidxml::xml_node<> const* get_tag_node(char const** path);
-    void get_mesh_data(std::vector<char*>& meshes);
+    void get_mesh_data(mesh_set_t& meshes);
     
 public:
     Parser(char* mlc_xml) : mlc_xml(mlc_xml) {}
     MLCitation parse();
     std::string get_tag_value(char const** path);
-    
 };
 
 #endif

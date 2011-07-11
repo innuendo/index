@@ -23,15 +23,23 @@ int main(int argc, char *argv[]) {
 	
 		cerr << "Indexing... ";
 		for (XMLStore::iterator i = store.begin(); i != store.end(); ++i) {
-			//cerr << "Processing PMID " << *i <<endl;
+#ifdef DEBUG
+			cerr << "Processing PMID " << *i <<endl;
+#endif
 			char *xml = store.get_xml(*i);
-			//cerr << xml <<endl;
+#ifdef DEBUG
+			cerr << xml <<endl;
+#endif
 			Parser parser(xml);
-			//cerr << "Parser loaded, parsing... ";
+#ifdef DEBUG
+			cerr << "Parser loaded, parsing... ";
+#endif
 			MLCitation cit = parser.parse();
-			//cerr << "done." <<endl;
-			//if (cit.meshtags.size())
-			//	cerr << cit.meshtags[0] << ' '<< cit.meshtags.size() << endl;
+#ifdef DEBUG
+			cerr << "done." <<endl;
+			if (cit.meshtags.size())
+				cerr << *(cit.meshtags.begin()) << ' '<< cit.meshtags.size() << endl;
+#endif
 			index.insert(cit);
 			delete(xml);
 		}
