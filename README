@@ -1,0 +1,47 @@
+
+MLCitation
+	Klasa reprezentujaca istotne dla wyszukiwarki atrybuty jednego rekordu w bazie.
+Aktualnie istotne informacje to wyroznione tagi (tytul, data publikacji) i "meshheadingi".
+
+
+Parser
+	Klasa parsujaca jeden rekord. Przy konstrukcji pobiera bufor zawierajacy XML
+rekordu i parsuje go (destruktywnie) przy pomocy RapidXML. Bufor musi istniec przez
+caly czas zycia obiektu Parser. Parser pozwala odczytywac dowolne tagi a takze za jednym
+zamachem wyekstrachowac wszystkie dane dla wyszukiwarki (w postaci obiektu MLCitation).
+
+
+XMLStore
+	Klasa magazynujaca XMLe rekordow. W obecnej implementacji raczej prymitywna,
+wczytuje rekordy z podanego bufora i trzyma je w pamieci. Klasa XMLStore powinna
+dostarczac mozliwosc iteracji po wszystkich przechowywanych w niej rekordach oraz
+pobierania tytulu, abstraktu i/lub XMLa dowolnego rekordu. Dane te zwracane sa w
+buforze ktory staje sie wlasnoscia uzytkownika i musi byc zwolniony przez delete().
+
+
+TagIndex
+	Klasa indeksujaca rekordy po istotnych tagach. Informacje wprowadza sie do niej
+w postaci obiektow MLCitation. Po wprowadzeniu danych i przed wyszukiwaniem nalezy
+wywolac metode postprocess(). Wewnetrznie zaimplementowana jako mapa z mozliwych wartosci
+tagow na wektory PMIDow rekordow, w ktorych tagi te maja taka wlasnie wartosc. Obsluguje
+zapytania o wartosc jednego z wyroznionych tagow lub o meshheading. Zwraca const
+referencje na odpowiedni wewnetrzny vector PMIDow lub na pusty vector gdy nic nie znajdzie.
+
+
+test
+	Program testujacy TagIndex i XMLStore. Laduje dane z plikow podanych w wierszu
+polecen i pozwala zadawac pytania o tytul czasopisma, date lub meshheading.
+
+
+DB
+	Klasa umozliwiajaca wykonywanie bardziej skomplikowanych zapytan (o kilka
+parametrow naraz). Przy konstrukcji pobiera referencje na XMLStore i TagIndex.
+Zapytania obslugiwane przez TagIndex wykonuje przy pomocy TagIndex, w zalozeniach
+ma obslugiwac inne zapytania poprzez pobranie XMLa rekordow zwroconych z zapytan
+do TagIndex z XMLStore, sparsowanie go Parserem i sprawdzenie wartosci zadanych tagow.
+Niedokonczona i nietestowana.
+
+
+dbtest
+	Ma umozliwiac testowanie DB ale niewiele umie.
+
