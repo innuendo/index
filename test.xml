@@ -1,0 +1,197 @@
+<MedlineCitation Owner="NLM" Status="MEDLINE">
+<PMID Version="1">18479468</PMID>
+<DateCreated>
+<Year>2009</Year>
+<Month>01</Month>
+<Day>07</Day>
+</DateCreated>
+<DateCompleted>
+<Year>2009</Year>
+<Month>08</Month>
+<Day>05</Day>
+</DateCompleted>
+<DateRevised>
+<Year>2009</Year>
+<Month>11</Month>
+<Day>03</Day>
+</DateRevised>
+<Article PubModel="Print-Electronic">
+<Journal>
+<ISSN IssnType="Electronic">1463-1326</ISSN>
+<JournalIssue CitedMedium="Internet">
+<Volume>11</Volume>
+<Issue>2</Issue>
+<PubDate>
+<Year>2009</Year>
+<Month>Feb</Month>
+</PubDate>
+</JournalIssue>
+<Title>Diabetes, obesity &amp; metabolism</Title>
+<ISOAbbreviation>Diabetes Obes Metab</ISOAbbreviation>
+</Journal>
+<ArticleTitle>Time of the day for 11beta-HSD1 inhibition plays a role in improving glucose homeostasis in DIO mice.</ArticleTitle>
+<Pagination>
+<MedlinePgn>109-17</MedlinePgn>
+</Pagination>
+<Abstract>
+<AbstractText Label="AIMS" NlmCategory="OBJECTIVE">The physiological effects of glucocorticoids in a given tissue are driven by the local level of the active glucocorticoid, which is determined by two sources: the plasma cortisol in human (or corticosterone in rodents) and the cortisol produced locally through 11beta-hydroxysteroid dehydrogenase type 1 (11beta-HSD1) activity. Because of the circadian variation of plasma glucocorticoids, the pharmacological efficacy of 11beta-HSD1 inhibition may depend on the time of the day for inhibitor administration.</AbstractText>
+<AbstractText Label="METHODS" NlmCategory="METHODS">The circadian profile of corticosterone was established in lean and diet-induced obesity (DIO) C57BL/6 mice from blood collected at different time of the day. 11beta-HSD1 enzyme activity was also measured throughout the day in DIO mice. To determine the optimal timing for administration of an 11beta-HSD1 inhibitor to obtain maximum efficacy, we used a DIO mouse model and a small molecule inhibitor of 11beta-HSD1 from our thiazolinone series. Based on the circadian profile of corticosterone obtained, we administered the 11beta-HSD1 inhibitor to these animals at different times of the day and evaluated the effects on plasma glucose levels and glucose tolerance.</AbstractText>
+<AbstractText Label="RESULTS" NlmCategory="RESULTS">We report that corticosterone circadian rhythm was similar between lean and DIO C57BL/6 mice, and 11beta-HSD1 enzyme activity undergoes minimal variations throughout the day. Interestingly, the compound exhibited maximum efficacy if dosed in the afternoon when plasma corticosterone is high; the morning dosing when plasma corticosterone is low did not lead to efficacy.</AbstractText>
+<AbstractText Label="CONCLUSION" NlmCategory="CONCLUSIONS">These data suggest that because of the circadian rhythm of circulating glucocorticoids, the time of the day for 11beta-HSD1 inhibitor administration is important in achieving efficacy.</AbstractText>
+</Abstract>
+<Affiliation>Department of Metabolic Disorders, Amgen Inc., Thousand Oaks, CA 91320, USA. mveniant@amgen.com</Affiliation>
+<AuthorList CompleteYN="Y">
+<Author ValidYN="Y">
+<LastName>Véniant</LastName>
+<ForeName>M M</ForeName>
+<Initials>MM</Initials>
+</Author>
+<Author ValidYN="Y">
+<LastName>Hale</LastName>
+<ForeName>C</ForeName>
+<Initials>C</Initials>
+</Author>
+<Author ValidYN="Y">
+<LastName>Komorowski</LastName>
+<ForeName>R</ForeName>
+<Initials>R</Initials>
+</Author>
+<Author ValidYN="Y">
+<LastName>Chen</LastName>
+<ForeName>M M</ForeName>
+<Initials>MM</Initials>
+</Author>
+<Author ValidYN="Y">
+<LastName>St Jean</LastName>
+<ForeName>D J</ForeName>
+<Initials>DJ</Initials>
+</Author>
+<Author ValidYN="Y">
+<LastName>Fotsch</LastName>
+<ForeName>C</ForeName>
+<Initials>C</Initials>
+</Author>
+<Author ValidYN="Y">
+<LastName>Wang</LastName>
+<ForeName>M</ForeName>
+<Initials>M</Initials>
+</Author>
+</AuthorList>
+<Language>eng</Language>
+<PublicationTypeList>
+<PublicationType>Journal Article</PublicationType>
+</PublicationTypeList>
+<ArticleDate DateType="Electronic">
+<Year>2008</Year>
+<Month>05</Month>
+<Day>12</Day>
+</ArticleDate>
+</Article>
+<MedlineJournalInfo>
+<Country>England</Country>
+<MedlineTA>Diabetes Obes Metab</MedlineTA>
+<NlmUniqueID>100883645</NlmUniqueID>
+<ISSNLinking>1462-8902</ISSNLinking>
+</MedlineJournalInfo>
+<ChemicalList>
+<Chemical>
+<RegistryNumber>0</RegistryNumber>
+<NameOfSubstance>2-(1-(2-fluorophenyl)ethylamino)-5-methyl-5-(trifluoromethyl)thiazol-4(5H)-one</NameOfSubstance>
+</Chemical>
+<Chemical>
+<RegistryNumber>0</RegistryNumber>
+<NameOfSubstance>Blood Glucose</NameOfSubstance>
+</Chemical>
+<Chemical>
+<RegistryNumber>0</RegistryNumber>
+<NameOfSubstance>DNA Primers</NameOfSubstance>
+</Chemical>
+<Chemical>
+<RegistryNumber>0</RegistryNumber>
+<NameOfSubstance>Enzyme Inhibitors</NameOfSubstance>
+</Chemical>
+<Chemical>
+<RegistryNumber>0</RegistryNumber>
+<NameOfSubstance>Thiazoles</NameOfSubstance>
+</Chemical>
+<Chemical>
+<RegistryNumber>50-22-6</RegistryNumber>
+<NameOfSubstance>Corticosterone</NameOfSubstance>
+</Chemical>
+<Chemical>
+<RegistryNumber>EC 1.1.1.146</RegistryNumber>
+<NameOfSubstance>11-beta-Hydroxysteroid Dehydrogenase Type 1</NameOfSubstance>
+</Chemical>
+</ChemicalList>
+<CitationSubset>IM</CitationSubset>
+<MeshHeadingList>
+<MeshHeading>
+<DescriptorName MajorTopicYN="N">11-beta-Hydroxysteroid Dehydrogenase Type 1</DescriptorName>
+<QualifierName MajorTopicYN="N">antagonists &amp; inhibitors</QualifierName>
+<QualifierName MajorTopicYN="Y">metabolism</QualifierName>
+</MeshHeading>
+<MeshHeading>
+<DescriptorName MajorTopicYN="N">Adipose Tissue</DescriptorName>
+<QualifierName MajorTopicYN="Y">enzymology</QualifierName>
+</MeshHeading>
+<MeshHeading>
+<DescriptorName MajorTopicYN="N">Animals</DescriptorName>
+</MeshHeading>
+<MeshHeading>
+<DescriptorName MajorTopicYN="N">Blood Glucose</DescriptorName>
+<QualifierName MajorTopicYN="N">genetics</QualifierName>
+<QualifierName MajorTopicYN="Y">metabolism</QualifierName>
+</MeshHeading>
+<MeshHeading>
+<DescriptorName MajorTopicYN="N">Corticosterone</DescriptorName>
+<QualifierName MajorTopicYN="N">administration &amp; dosage</QualifierName>
+<QualifierName MajorTopicYN="Y">blood</QualifierName>
+</MeshHeading>
+<MeshHeading>
+<DescriptorName MajorTopicYN="N">DNA Primers</DescriptorName>
+</MeshHeading>
+<MeshHeading>
+<DescriptorName MajorTopicYN="N">Diet</DescriptorName>
+</MeshHeading>
+<MeshHeading>
+<DescriptorName MajorTopicYN="Y">Drug Chronotherapy</DescriptorName>
+</MeshHeading>
+<MeshHeading>
+<DescriptorName MajorTopicYN="N">Enzyme Inhibitors</DescriptorName>
+<QualifierName MajorTopicYN="N">administration &amp; dosage</QualifierName>
+<QualifierName MajorTopicYN="N">pharmacology</QualifierName>
+</MeshHeading>
+<MeshHeading>
+<DescriptorName MajorTopicYN="N">Homeostasis</DescriptorName>
+<QualifierName MajorTopicYN="Y">drug effects</QualifierName>
+</MeshHeading>
+<MeshHeading>
+<DescriptorName MajorTopicYN="N">Lipid Metabolism</DescriptorName>
+<QualifierName MajorTopicYN="N">genetics</QualifierName>
+</MeshHeading>
+<MeshHeading>
+<DescriptorName MajorTopicYN="N">Liver</DescriptorName>
+<QualifierName MajorTopicYN="N">metabolism</QualifierName>
+</MeshHeading>
+<MeshHeading>
+<DescriptorName MajorTopicYN="N">Male</DescriptorName>
+</MeshHeading>
+<MeshHeading>
+<DescriptorName MajorTopicYN="N">Mice</DescriptorName>
+</MeshHeading>
+<MeshHeading>
+<DescriptorName MajorTopicYN="N">Mice, Inbred C57BL</DescriptorName>
+</MeshHeading>
+<MeshHeading>
+<DescriptorName MajorTopicYN="N">Random Allocation</DescriptorName>
+</MeshHeading>
+<MeshHeading>
+<DescriptorName MajorTopicYN="N">Thiazoles</DescriptorName>
+<QualifierName MajorTopicYN="N">administration &amp; dosage</QualifierName>
+<QualifierName MajorTopicYN="N">pharmacology</QualifierName>
+</MeshHeading>
+<MeshHeading>
+<DescriptorName MajorTopicYN="N">Time Factors</DescriptorName>
+</MeshHeading>
+</MeshHeadingList>
+</MedlineCitation>
