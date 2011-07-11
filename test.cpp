@@ -57,11 +57,13 @@ int main(int argc, char *argv[]) {
 		if (q == "m")
 			r = &index.query_mesh(s);
 		double time = timer.us();
-		if (r)
-			print(*r);
-		else
+		if (!r) {
 			cout << "> Valid queries: d(ate), j(ournal), m(esh)" << endl;
-		cout << "> Processing time: " << time << "us." << endl;
+		} else {
+			print(*r);
+			cout << "> Fetched records:\t" << r->size() << endl;
+		}
+		cout << "> Processing time:\t" << time << "us." << endl;
 	}
 	return 0;
 }
