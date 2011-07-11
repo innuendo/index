@@ -14,7 +14,7 @@ class TagIndex {
 	mlcmap	mesh;
 public:
 	void insert(const MLCitation&);
-	void sort();
+	void postprocess();
 
 	const mlcvect& query_journal(const std::string) const;
 	const mlcvect& query_date(const std::string) const ;
